@@ -1,0 +1,139 @@
+/*** Custom Properties ***/
+:root {
+    --first-color: #0C182B;
+    --second-color: #14243D;
+    --text-color: #8BABD9;
+    --data-color: #00FFF6;
+    --data-color-opacity: #00FFF655;
+    --line-color: #2E415A;
+    --white-color: #FFF;
+    --black-color: #000;
+    --font: 'Outfit', sans-serif;
+}
+
+/*** Reset ***/
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 18px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+}
+
+/*** Components ***/
+
+/*** Utilities ***/
+
+/*** Site Styles ***/
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+}
+
+.card-footer img {
+    width: 40px;
+    height: 40px;
+    border: thin solid #fff;
+    border-radius: 50%;
+}
+
+.card-footer span {
+    color: var(--white-color);
+}
+
+.card-footer span:hover {
+    color: var(--data-color);
+    cursor: pointer;
+}
+
+.container {
+    padding: 3.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--first-color);
+    min-height: 100vh;
+}
+
+.eth-text {
+    color: var(--data-color);
+    font-weight: 600;
+}
+
+h1 {
+    color: var(--white-color);
+    font-size: 1.2rem;
+}
+
+h1:hover {
+    color: var(--data-color);
+    cursor: pointer;
+}
+
+hr {
+    color: var(--line-color);
+}
+
+.ntf-card {
+    padding: 1.3rem;
+    width: 87%;
+    max-width: 350px;
+    min-width: 250px;
+    background-color: var(--second-color);
+    border-radius: 14px;
+    box-shadow: 0px 0px 40px var(--black-color);
+}
+
+.ntf-image {
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.ntf-image-section {
+    position: relative;
+}
+
+.ntf-properties {
+    padding: 0.5rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.ntf-properties-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--data-color-opacity);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 14px;
+    transition: 0.3s all ease-in-out;
+}
+
+.overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+}
