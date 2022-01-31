@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+/*** Custom Properties ***/
+:root {
+    --first-color: hsl(210, 46%, 95%);
+    --second-color: hsl(212, 23%, 69%);
+    --third-color: hsl(214, 17%, 51%);
+    --fourth-color : hsl(217, 19%, 35%);
+
+    --text-color: var(--third-color);
+    --white-color: #FFF;
+    --black-color: #000;
+    --font: 'Manrope', sans-serif;
+}
+
+/*** Reset ***/
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 13px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+}
+
+/*** Components ***/
+
+/*** Utilities ***/
+
+/*** Site Styles ***/
+
+.article-card {
+    min-width: 300px;
+    max-width: 800px;
+    margin: 0 2rem;
+    background-color: var(--white-color);
+    border-radius: 0.8rem;
+    box-shadow: 4px 4px 40px lightgray;
+}
+
+.article-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.article-contact img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.article-contact-user span {
+    color: var(--second-color);
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-image {
+    background-image: url("../images/drawers.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 250px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.article-info {
+    position: relative;
+    padding: 1rem 2.4rem;
+}
+
+.article-info p {
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+}
+
+.article-link {
+    position: relative;
+    z-index: 9;
+    background-color: var(--first-color);
+    padding: 0.8em;
+    border-radius: 50%;
+}
+
+.article-link:hover,
+.article-link.active
+ {
+    background-color: var(--third-color);
+    cursor: pointer;
+}
+
+.article-link:hover * {
+    background-color: var(--third-color);
+    fill: var(--white-color);
+}
+
+.article-link svg {
+    fill: var(--third-color);
+    background-color: inherit;
+}
+
+.article-link svg:hover,
+.article-link svg.active {
+    background-color: inherit;
+    fill: var(--white-color);
+}
+
+h1 {
+    margin: 1.5rem 0 1rem;
+    color: var(--fourth-color);
+    font-size: 1.35rem;
+}
+
+h4 {
+    color: var(--fourth-color);
+    margin: 0 0 0.2rem 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: var(--first-color);
+}
+
+.social-links {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--fourth-color);
+    color: var(--white-color);
+    border-radius: 0 0 0.8rem 0.8rem;
+    padding: 1.75rem 2.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.social-links.active {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.social-links img {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+.social-links span {
+    color: var(--second-color);
+    letter-spacing: 0.4rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .article-card {
+        display: flex;
+    }
+
+    .article-footer {
+        margin: 1.75rem 0;
+    }
+
+    .article-image {
+        flex: 0 0 40%;
+        border-radius: unset;
+        border-top-left-radius: 0.8rem;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0.8rem;
+        border-bottom-right-radius: 0;
+    }
+
+    .article-info {
+        position: static;
+        flex: 0 0 60%;
+        padding: 1rem 3rem;
+    }
+
+    .article-info p {
+        margin-bottom: 2rem;
+    }
+
+    .article-links {
+        position: relative;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .social-links {
+        justify-content: space-evenly;
+        padding: 1.4rem 2.5rem;
+        left: -104px;
+        top: -92px;
+        bottom: unset;
+        width: auto;
+        height: auto;
+        border-radius: 0.8rem;
+        box-shadow: 4px 4px 40px lightgray;
+    }
+
+    .social-links::after {
+        position: absolute;
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        background-color:inherit;
+        left: calc(50%);
+        top: 50px;
+        transform: rotate(45deg);
+    }
+}
